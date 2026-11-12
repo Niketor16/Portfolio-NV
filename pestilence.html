@@ -226,6 +226,10 @@ footer a{letter-spacing:.14em;text-transform:uppercase}
 .car-fig img{display:block;width:100%;aspect-ratio:4/3;object-fit:contain;background:#fff;border:1px solid var(--line-2)}
 .car-ph{aspect-ratio:4/3;max-width:100%}
 .car-fig img.car-img-dark{background:#000}
+.car-shot .car-fig img{aspect-ratio:1600/968;object-fit:cover}
+.car-gif .car-fig img{aspect-ratio:1787/1258;object-fit:cover}
+.car-nocap .car-btn{top:50%}
+.car-sm.car-nocap + .car-count{margin-top:12px}
 .car-fig figcaption{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .car-sm .car-btn{top:calc((100% - 28px) / 2);width:44px;height:44px;font-size:18px}
 .car-sm .car-prev{left:10px}.car-sm .car-next{right:10px}
@@ -269,7 +273,6 @@ window.addEventListener('pageshow',toTop);
   <div class="wrap">
     <a class="back" href="index.html#personal">← Back to projects</a>
     <h1 class="h2 h-xl">Pestilence</h1>
-    <div class="p-sub">Level Design</div>
     <dl class="facts">
       <div><dt>Year</dt><dd>2026</dd></div>
       <div><dt>Role</dt><dd>Multirole</dd></div>
@@ -301,7 +304,7 @@ window.addEventListener('pageshow',toTop);
         <p>To do this game, I needed to <strong>create a new language</strong>, so I took inspiration from <strong>dead languages</strong>, like dead Germanic dialects from the 13th century, one especially: <strong>Greenlandic Norse</strong>.</p>
         <p>Its alphabet is composed of <strong>runes</strong>, used by the <strong>Norse settlers in Greenland</strong>. So, I decided to take this language and <strong>mix it with alchemy</strong>.</p>
       </div>
-      <div class="ph">Concept art / reference</div>
+      <img class="step-img step-img-free" src="img/pestilence-conception.png" alt="Stone tablet carved with an alchemical symbol and a word in Norse runes">
     </div>
   </div>
 </section>
@@ -313,7 +316,22 @@ window.addEventListener('pageshow',toTop);
   <div class="steps">
     <div class="step">
       <div><div class="num">STEP 01</div><h3 class="h2">Conception</h3><div class="prose"><p>I wanted to create a world with a <strong>dark secret to unveil</strong>, where the player would have <strong>exactly the same knowledge</strong> of it <strong>as the character</strong>, to <strong>increase the immersion</strong>.</p><p>I wanted the world to <strong>look beautiful</strong> while also showing the <strong>gruesome atmosphere</strong> that the Plague created, and how <strong>people lose their humanity</strong> under certain circumstances.</p><p>I also thought that it would be interesting to have a <strong>skill tree</strong> where you need to find the <strong>right combination of runes</strong> to <strong>unlock new recipes</strong>. This reinforces the immersion in the role of an <strong>alchemist apprentice</strong> who's <strong>discovering lost knowledge</strong>.</p></div></div>
-      <img class="step-img step-img-free" src="img/pestilence-conception.png" alt="Stone tablet carved with an alchemical symbol and a word in Norse runes">
+      <div class="step-gallery">
+        <div class="carousel car-sm car-shot" aria-roledescription="carousel" aria-label="Level areas">
+          <div class="car-track" tabindex="0">
+            <figure class="car-slide car-fig"><img class="car-img-dark" src="img/pestilence-small-deposit.jpg" alt="Dark small deposit with stacked crates, lit by a torch"><figcaption>1 · Small deposit</figcaption></figure>
+            <figure class="car-slide car-fig"><img class="car-img-dark" src="img/pestilence-alley.jpg" alt="Village alley with a rat zone and Layla saying that rats are here too" loading="lazy"><figcaption>2 · Alley</figcaption></figure>
+            <figure class="car-slide car-fig"><img class="car-img-dark" src="img/pestilence-narrative-2.jpg" alt="Farm interior: rats block the way under a hanging pig carcass, and Layla says the carcass could help" loading="lazy"><figcaption>3 · Farm interior</figcaption></figure>
+            <figure class="car-slide car-fig"><img class="car-img-dark" src="img/pestilence-farm-ext.jpg" alt="Farm exterior with open barn doors and a cart under a shelter" loading="lazy"><figcaption>4 · Farm exterior</figcaption></figure>
+            <figure class="car-slide car-fig"><img class="car-img-dark" src="img/pestilence-narrative.jpg" alt="Level opening: two guards by a cart, with their barks shown as floating text" loading="lazy"><figcaption>5 · Opening</figcaption></figure>
+            <figure class="car-slide car-fig"><img class="car-img-dark" src="img/pestilence-market.jpg" alt="Market street with stalls, torches and an animal carcass on a counter" loading="lazy"><figcaption>6 · Market</figcaption></figure>
+            <figure class="car-slide car-fig"><img class="car-img-dark" src="img/pestilence-square.jpg" alt="Village square where two guards say that another village has been cleansed" loading="lazy"><figcaption>7 · Square</figcaption></figure>
+          </div>
+          <button class="car-btn car-prev" type="button" aria-label="Previous image">&#8592;</button>
+          <button class="car-btn car-next" type="button" aria-label="Next image">&#8594;</button>
+        </div>
+        <div class="car-count" aria-live="polite"><span class="car-now">1</span> / <span class="car-total">7</span></div>
+      </div>
     </div>
     <div class="step">
       <div><div class="num">STEP 02</div><h3 class="h2">Layout</h3><div class="prose"><p>I designed a <strong>village of farmers and merchants</strong> that has been attacked by the <strong>Plague</strong> and the <strong>Royal Guard</strong>.</p><p>The focus of the level is <strong>stealth</strong>. I wanted to make the player <strong>feel like a prey</strong> while exploring the <strong>narrow streets</strong> of the village overwhelmed by <strong>rats</strong>. This allowed me to play with <strong>tension</strong> and create <strong>situations of stress</strong> to reinforce the &ldquo;prey&rdquo; aspect.</p><p>However, I didn't want to limit the player to the stealth approach: it's also possible to <strong>fight the guards</strong>, but at a <strong>high cost in terms of resources</strong>.</p></div></div>
@@ -334,15 +352,36 @@ window.addEventListener('pageshow',toTop);
     </div>
     <div class="step">
       <div><div class="num">STEP 03</div><h3 class="h2">Narrative overview</h3><div class="prose"><p>I tell my story through <strong>environmental narration</strong>, but also with <strong>barks from the guards</strong>. The main goal is to make the player <strong>feel like the hero</strong> who has to <strong>save humanity</strong> from collapsing under the Plague.</p><p>Starting with <strong>little information</strong> and gathering it along the way increases the feeling of being the <strong>only hope for salvation</strong>. That's also why most of the main character's journey is <strong>solitary</strong>, like a <strong>beam of light surrounded by darkness</strong>.</p><p>So, the player feels the <strong>weight and the pressure of this world</strong> on his shoulders too.</p></div></div>
-      <div class="ph">Beat chart / flow diagram</div>
+      <div class="step-gallery">
+        <div class="carousel car-sm car-shot car-nocap" aria-roledescription="carousel" aria-label="Narrative in the level">
+          <div class="car-track" tabindex="0">
+            <figure class="car-slide car-fig"><img class="car-img-dark" src="img/pestilence-narrative.jpg" alt="Level opening in the Unreal Engine editor: two guards by a cart, with their barks shown as floating text"></figure>
+            <figure class="car-slide car-fig"><img class="car-img-dark" src="img/pestilence-narrative-2.jpg" alt="Farm interior in the Unreal Engine editor: rats block the way under a hanging pig carcass, and Layla says the carcass could help" loading="lazy"></figure>
+            <figure class="car-slide car-fig"><img class="car-img-dark" src="img/pestilence-narrative-3.jpg" alt="Fountain square in the Unreal Engine editor: two guards stand over a villager killed in the fountain, with the cinematic note and their dialogue as floating text" loading="lazy"></figure>
+          </div>
+          <button class="car-btn car-prev" type="button" aria-label="Previous image">&#8592;</button>
+          <button class="car-btn car-next" type="button" aria-label="Next image">&#8594;</button>
+        </div>
+        <div class="car-count" aria-live="polite"><span class="car-now">1</span> / <span class="car-total">3</span></div>
+      </div>
     </div>
     <div class="step">
       <div><div class="num">STEP 04</div><h3 class="h2">Blockout &amp; iterations</h3><div class="prose"><p>I wanted to <strong>alternate exterior and interior sections</strong> of the village, but I didn't want to give the <strong>feeling of total safety</strong> while there.</p><p>So in these kinds of zones I used <strong>obstacles</strong> like <strong>miasma</strong> or <strong>rats</strong> to <strong>keep the player on his toes</strong>.</p><p>I also needed to <strong>guide the player</strong> through these events without creating <strong>confusion or misunderstandings</strong> on the correct path. The solution was to use items like <strong>furniture, boxes or carts</strong> to create <strong>leading lines</strong> that give a direction, also reinforced by the <strong>lights of torches</strong>.</p></div></div>
-      <div class="ph">Blockout screenshot</div>
+      <div class="step-gallery">
+        <div class="carousel car-sm car-gif" aria-roledescription="carousel" aria-label="Blockout iterations">
+          <div class="car-track" tabindex="0">
+            <figure class="car-slide car-fig"><img class="car-img-dark" src="img/pestilence-blockout.gif" alt="Animated blockout of a house interior in grey grid material, with light markers on the back wall"><figcaption>1 · House</figcaption></figure>
+            <figure class="car-slide car-fig"><img class="car-img-dark" src="img/pestilence-blockout-2.gif" alt="Animated blockout of the farm interior in grey grid material, with a vaulted ceiling and light markers" loading="lazy"><figcaption>2 · Farm</figcaption></figure>
+          </div>
+          <button class="car-btn car-prev" type="button" aria-label="Previous image">&#8592;</button>
+          <button class="car-btn car-next" type="button" aria-label="Next image">&#8594;</button>
+        </div>
+        <div class="car-count" aria-live="polite"><span class="car-now">1</span> / <span class="car-total">2</span></div>
+      </div>
     </div>
     <div class="step">
       <div><div class="num">STEP 05</div><h3 class="h2">Final level</h3><div class="prose"><p>The village had to <strong>feel alive even without the player</strong>. To do so, I had to think about <strong>what happened before his arrival</strong>.</p><p>In zones like the <strong>market</strong>, the <strong>deposit</strong> and the <strong>alchemist's house</strong>, I arranged the <strong>placement of items and furniture</strong> to hint that there was a <strong>fight</strong>, someone <strong>fleeing</strong> or <strong>being captured</strong> in the rush.</p></div></div>
-      <div class="ph">Final screenshot</div>
+      <img class="step-img" src="img/pestilence-final.gif" alt="Animated overview of the whole level blockout in Unreal Engine, seen from above">
     </div>
   </div>
   <div class="note">
@@ -360,7 +399,6 @@ window.addEventListener('pageshow',toTop);
   <div class="wrap">
     <div class="eyebrow">Production example</div>
     <h2 class="h2 h-lg">Level design document</h2>
-    <div class="prose"><p>[A few pages from the document I wrote for the team.]</p></div>
     <div class="carousel" aria-roledescription="carousel" aria-label="Level design document pages">
       <div class="car-track" tabindex="0">
         <div class="ph car-slide">Document page 1</div>

@@ -1,4 +1,8 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nicola Vischi | Junior Level / Narrative Designer</title>
 <meta name="description" content="Portfolio of a young Level Designer / Builder.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -6,7 +10,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  color-scheme:dark;
   --accent:#E8512B;
   --bg:#0D1417; --bg-alt:#111B20; --panel:#16222A; --panel-2:#1B2A32;
   --line:#22313A; --line-2:#2F424C;
@@ -33,7 +36,7 @@ a{color:inherit;text-decoration:none}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
 /* header */
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
 .bar{max-width:1200px;margin:0 auto;padding:16px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
 .brand{display:flex;align-items:center;gap:16px}
 .logo{width:56px;height:56px;border-radius:50%;font-size:10px}
@@ -77,6 +80,16 @@ nav a:hover{color:var(--text)}
 .strip{padding:24px 12px;margin-inline:-12px;scroll-padding-inline:12px}
 /* work-in-progress cards: big diagonal label across the card */
 .proj.wip{container-type:size;display:flex;align-items:center;justify-content:center}
+/* hover preview: project details */
+.proj-body{position:absolute;z-index:1;left:24px;right:24px;bottom:20px}
+.proj-body .proj-title{position:static;display:block}
+.proj-info{margin:0;display:grid;grid-template-columns:auto 1fr;column-gap:16px;row-gap:4px;max-height:0;opacity:0;overflow:hidden;transform:translateY(8px);transition:max-height .35s ease,opacity .3s ease,transform .35s ease,margin-top .35s ease}
+.proj-info div{display:contents}
+.proj-info dt{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);align-self:center}
+.proj-info dd{margin:0;font-size:14px;color:var(--text)}
+.proj.has-info .proj-img{transition:transform .5s ease,filter .35s ease}
+.proj.has-info:hover .proj-img,.proj.has-info:focus-visible .proj-img{filter:brightness(.4)}
+.proj.has-info:hover .proj-info,.proj.has-info:focus-visible .proj-info{max-height:160px;opacity:1;transform:none;margin-top:14px}
 .wip-label{position:relative;display:block;transform:rotate(-45deg);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:56cqw;line-height:1;letter-spacing:.04em;color:var(--line-2);white-space:nowrap}
 .hint{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-top:12px}
 .sq{aspect-ratio:1/1}
@@ -161,6 +174,8 @@ footer a{letter-spacing:.14em;text-transform:uppercase}
   .contact{gap:40px}
 }
 </style>
+</head>
+<body>
 
 <header>
   <div class="bar">
@@ -201,8 +216,8 @@ footer a{letter-spacing:.14em;text-transform:uppercase}
   <div class="about">
     <img class="about-img" src="img/about.jpg" alt="Group photo with my game development class">
     <div class="txt">
-      <p class="h2 quote">“It's a work of passion”</p>
-      <p>And I have a lot to share 💪</p>
+      <p class="h2 quote">“It's a work of passion, and I have plenty to share”&nbsp;💪</p>
+      <p>I've always wanted to <strong>make games that inspire passion in others</strong>. After meeting <strong>many people like me</strong> during my studies, I was sure this was <strong>the right path for me</strong>, and now I can't wait to <strong>join a studio</strong> to fulfil my dream!</p>
     </div>
   </div>
 </section>
@@ -213,21 +228,21 @@ footer a{letter-spacing:.14em;text-transform:uppercase}
     <h2 class="h2 h-lg">Projects I have worked on</h2>
     <!-- Each card: put the image in img/ with the name below, and replace href="#" with the project link -->
     <div class="grid g2">
-      <a class="proj" href="the-flowering-dead.html">
+      <a class="proj has-info" href="the-flowering-dead.html">
         <div class="proj-img" style="background-image:url(img/the-flowering-dead.jpg);background-position:center top"></div>
-        <span class="proj-title">The Flowering Dead</span>
+        <div class="proj-body"><span class="proj-title">The Flowering Dead</span><dl class="proj-info"><div><dt>Year</dt><dd>2026</dd></div><div><dt>Role</dt><dd>Level Designer</dd></div><div><dt>Engine</dt><dd>UE5</dd></div><div><dt>Team</dt><dd>16</dd></div><div><dt>Duration</dt><dd>6 weeks</dd></div></dl></div>
       </a>
-      <a class="proj" href="bladerunner-reborn.html">
-        <div class="proj-img" style="background-image:url(img/bladerunner-reborn.jpg);background-position:center top"></div>
-        <span class="proj-title">BladeRunner Re:Born</span>
-      </a>
-      <a class="proj" href="porco-rosso.html">
-        <div class="proj-img" style="background:var(--panel) url(img/porco-rosso.png) no-repeat center 38%/auto 52%"></div>
-        <span class="proj-title">Pilot's Heaven</span>
-      </a>
-      <a class="proj" href="the-initiate.html">
+      <a class="proj has-info" href="the-initiate.html">
         <div class="proj-img" style="background-image:url(img/the-initiate-card.jpg);background-position:center top"></div>
-        <span class="proj-title">The Initiate</span>
+        <div class="proj-body"><span class="proj-title">The Initiate</span><dl class="proj-info"><div><dt>Year</dt><dd>2026</dd></div><div><dt>Role</dt><dd>Narrative Design</dd></div><div><dt>Engine</dt><dd>UE5</dd></div><div><dt>Team</dt><dd>14</dd></div><div><dt>Duration</dt><dd>4 weeks</dd></div></dl></div>
+      </a>
+      <a class="proj has-info" href="porco-rosso.html">
+        <div class="proj-img" style="background:var(--panel) url(img/porco-rosso.png) no-repeat center 38%/auto 52%"></div>
+        <div class="proj-body"><span class="proj-title">Pilot's Heaven</span><dl class="proj-info"><div><dt>Year</dt><dd>2026</dd></div><div><dt>Role</dt><dd>Narrative Design</dd></div><div><dt>Engine</dt><dd>UE5</dd></div><div><dt>Team</dt><dd>13</dd></div><div><dt>Duration</dt><dd>3 weeks</dd></div></dl></div>
+      </a>
+      <a class="proj has-info" href="bladerunner-reborn.html">
+        <div class="proj-img" style="background-image:url(img/bladerunner-reborn.jpg);background-position:center top"></div>
+        <div class="proj-body"><span class="proj-title">BladeRunner Re:Born</span><dl class="proj-info"><div><dt>Year</dt><dd>2026</dd></div><div><dt>Role</dt><dd>Narrative Design</dd></div><div><dt>Engine</dt><dd>Unity</dd></div><div><dt>Team</dt><dd>15</dd></div><div><dt>Duration</dt><dd>3 weeks</dd></div></dl></div>
       </a>
     </div>
   </div>
@@ -238,7 +253,7 @@ footer a{letter-spacing:.14em;text-transform:uppercase}
   <h2 class="h2 h-lg">My personal projects</h2>
   <div class="strip">
     <!-- Images: put level-01.jpg ... in img/ -->
-    <a class="proj" href="pestilence.html"><div class="proj-img" style="background-image:url(img/pestilence.jpg)"></div><span class="proj-title">Pestilence</span></a>
+    <a class="proj has-info" href="pestilence.html"><div class="proj-img" style="background-image:url(img/pestilence.jpg)"></div><div class="proj-body"><span class="proj-title">Pestilence</span><dl class="proj-info"><div><dt>Year</dt><dd>2026</dd></div><div><dt>Role</dt><dd>Multirole</dd></div><div><dt>Engine</dt><dd>UE5</dd></div><div><dt>Team</dt><dd>Solo</dd></div><div><dt>Duration</dt><dd>3 weeks</dd></div></dl></div></a>
     <div class="proj"><div class="proj-img" style="background-image:url(img/level-02.jpg)"></div><span class="proj-title">Frozen Spirits</span></div>
     <div class="proj"><div class="proj-img" style="background-image:url(img/level-03.jpg)"></div><span class="proj-title">Level 03</span></div>
     <div class="proj wip"><span class="wip-label">WIP</span></div><div class="proj wip"><span class="wip-label">WIP</span></div><div class="proj wip"><span class="wip-label">WIP</span></div><div class="proj wip"><span class="wip-label">WIP</span></div>
@@ -298,7 +313,7 @@ footer a{letter-spacing:.14em;text-transform:uppercase}
       <a class="mail" href="mailto:nicolavischi3@gmail.com">nicolavischi3@gmail.com</a>
       <div class="social">
         <a href="https://www.linkedin.com/in/nicola-vischi-27b385314/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E9EEEE" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 014 0v4M12 10v7"/></svg></a>
-        <a href="nicola-vischi-cv.pdf" download="Nicola-Vischi-CV.pdf" target="_blank" rel="noopener" aria-label="Download CV" title="Download CV"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E9EEEE" stroke-width="1.6" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg></a>
+        <a href="#" aria-label="Download CV" title="Download CV"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E9EEEE" stroke-width="1.6" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg></a>
       </div>
     </div>
     <!-- On Netlify the form works as-is once deployed (netlify attribute + hidden field below). -->
@@ -321,5 +336,5 @@ footer a{letter-spacing:.14em;text-transform:uppercase}
   </div>
 </footer>
 
-
-</body></html>
+</body>
+</html>
